@@ -46,7 +46,7 @@ RUN cd /tensorflow && \
 
 ADD /workloads/tensorflow_inference/prep_dataset_fruits.py /prep_dataset_fruits.py
 ADD /workloads/tensorflow_inference/requirements.txt /requirements.txt
-ADD /workloads/tensorflow_inference/kaggle.json /root/.kaggle/kaggle.json
+ADD /kaggle.json /root/.kaggle/kaggle.json
 RUN pip3.6 install -r requirements.txt
 RUN python3.6 /prep_dataset_fruits.py
 
