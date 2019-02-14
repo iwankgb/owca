@@ -3,9 +3,6 @@ pipeline {
     environment {
         DOCKER_REPOSITORY_URL = credentials('DOCKER_REPOSITORY_URL')
     }
-    triggers {
-        cron('*/10 * * * *')
-    }
     stages{
         stage("Flake8 formatting scan") {
             steps {
