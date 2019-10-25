@@ -327,10 +327,10 @@ class AllocationRunner(MeasurementRunner):
             log.debug('New allocations: %s', new_allocations)
             new_allocations_values = TasksAllocationsValues.create(
                 self._rdt_enabled, new_allocations, self._containers_manager.containers, platform)
-            new_allocations_values.validate()
 
             # Calculate changeset and target_allocations.
             if new_allocations_values is not None:
+                new_allocations_values.validate()
                 target_allocations_values, allocations_changeset_values = \
                     new_allocations_values.calculate_changeset(current_allocations_values)
                 target_allocations_values.validate()
