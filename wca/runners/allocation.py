@@ -330,10 +330,9 @@ class AllocationRunner(MeasurementRunner):
             new_allocations_values.validate()
 
             # Calculate changeset and target_allocations.
-            if new_allocations_values is not None:
-                target_allocations_values, allocations_changeset_values = \
-                    new_allocations_values.calculate_changeset(current_allocations_values)
-                target_allocations_values.validate()
+            target_allocations_values, allocations_changeset_values = \
+                new_allocations_values.calculate_changeset(current_allocations_values)
+            target_allocations_values.validate()
 
             self._allocations_counter += len(new_allocations)
 
